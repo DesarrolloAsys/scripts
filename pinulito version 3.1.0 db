@@ -70,4 +70,32 @@ GO
 SET ANSI_PADDING OFF
 GO
 
+-------------------------------------- PROCEDIMIENTO RED_LEYENDA_H
+
+CREATE PROCEDURE RED_LEYENDA_H
+	@EMPRESA VARCHAR(5)
+AS
+BEGIN
+	Select Empresa, Id, FechaIni, FechaFin, Descripcion 
+	from LEYENDA_H
+	where Empresa = @EMPRESA
+END
+GO
+
+
+----------------------------------------- PROCEDIMIENTO RED_LEYENDA_D
+
+
+CREATE PROCEDURE RED_LEYENDA_D
+	@EMPRESA VARCHAR(5)
+AS
+BEGIN
+	Select EMPRESA, ID, NO_LINEA, IMPRESION, ORDEN, JUSTIFICADO
+	from LEYENDA_D
+	where Empresa = @EMPRESA
+END
+GO
+
+
+
 
