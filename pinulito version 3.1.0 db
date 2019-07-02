@@ -108,8 +108,6 @@ END
 
 --------------------------------------- FUNCION F_LEYENDAS
 
-USE [POS_PINULITO]
-GO
 
 /****** Object:  UserDefinedFunction [dbo].[F_LEYENDAS]    Script Date: 2/07/2019 15:19:13 ******/
 SET ANSI_NULLS ON
@@ -140,7 +138,23 @@ END
 GO
 
 
+--------------------------------------------------------
 
+
+-- =============================================
+-- Author:		Fernando Paniagua
+-- Create date: 20190702
+-- Description:	Devuelve Listado de CXP_TIPO_DOCTO para método ws_RedEmpresarial 
+-- =============================================
+CREATE PROCEDURE RED_CXP_TIPO_DOCTO
+	@EMPRESA VARCHAR(5)
+AS
+BEGIN
+	Select Empresa as Empresa, Tipo_Docto as TipoDocto, descripcion as  Descripcion
+	from CXP_TIPO_DOCTO
+	where Empresa = @EMPRESA
+END
+GO
 
 
 
